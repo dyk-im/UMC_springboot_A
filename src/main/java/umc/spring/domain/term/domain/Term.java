@@ -17,6 +17,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import umc.spring.domain.mapping.UserAgree;
 import umc.spring.domain.shared.BaseTimeEntity;
 import umc.spring.domain.shared.TermType;
 
@@ -43,7 +44,7 @@ public class Term extends BaseTimeEntity {
 	private TermType termType;
 
 	@OneToMany(mappedBy = "term", cascade = CascadeType.ALL)
-	private List<Term> termList = new ArrayList<>();
+	private List<UserAgree> userAgreeList = new ArrayList<>();
 
 	@Builder
 	private Term(String termContent, String termCategory, TermType termType) {

@@ -32,6 +32,7 @@ import umc.spring.domain.shared.BaseTimeEntity;
 import umc.spring.domain.shared.Gender;
 import umc.spring.domain.shared.SocialStatus;
 import umc.spring.domain.shared.UserStatus;
+import umc.spring.domain.shared.UserType;
 
 @Entity(name = "users")
 @Getter
@@ -57,7 +58,7 @@ public class User extends BaseTimeEntity {
 	@NotNull
 	@Column(columnDefinition = "VARCHAR(10)")
 	@Enumerated(EnumType.STRING)
-	private String userType;
+	private UserType userType;
 
 	@Column(length = 10)
 	private String nickname;

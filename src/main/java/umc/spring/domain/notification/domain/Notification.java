@@ -12,7 +12,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.spring.domain.shared.BaseTimeEntity;
@@ -45,7 +44,6 @@ public abstract class Notification extends BaseTimeEntity {
 	@Column
 	private String content;
 
-	@Builder
 	protected Notification(User user, boolean confirmStatus, String title, String content){
 		this.user = user;
 		this.title = title;
