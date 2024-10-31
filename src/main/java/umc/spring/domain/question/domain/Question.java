@@ -1,5 +1,9 @@
 package umc.spring.domain.question.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -10,11 +14,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import umc.spring.domain.answer.domain.Answer;
+import umc.spring.domain.questionMedia.domain.QuestionMedia;
 import umc.spring.domain.shared.BaseTimeEntity;
 import umc.spring.domain.shared.QuestionStatus;
 import umc.spring.domain.shared.QuestionType;
@@ -51,6 +59,12 @@ public class Question extends BaseTimeEntity {
 	@NotNull
 	@Column
 	private String content;
+
+	@OneToOne(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Answer answer;
+
+	@OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+	private List<QuestionMedia> questionMediaList = new ArrayList<>();
 
 	@Builder
 	private Question(User user, QuestionType questionType, String title, String content) {

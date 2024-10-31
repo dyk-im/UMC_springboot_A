@@ -26,7 +26,6 @@ import umc.spring.domain.mapping.UserMission;
 import umc.spring.domain.mapping.UserPrefer;
 import umc.spring.domain.notification.domain.Notification;
 import umc.spring.domain.point.domain.Point;
-import umc.spring.domain.question.domain.Question;
 import umc.spring.domain.reply.domain.Reply;
 import umc.spring.domain.review.domain.Review;
 import umc.spring.domain.shared.BaseTimeEntity;
@@ -105,25 +104,25 @@ public class User extends BaseTimeEntity {
 
 	private String refreshToken;
 
-	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<UserAgree> memberAgreeList = new ArrayList<>();
 
-	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<UserPrefer> memberPreferList = new ArrayList<>();
 
-	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<UserMission> memberMissionList = new ArrayList<>();
 
-	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Notification> notificationList = new ArrayList<>();
 
-	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Point> pointList = new ArrayList<>();
 
-	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Review> reviewList = new ArrayList<>();
 
-	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Reply> replyList = new ArrayList<>();
 
 	@Builder
