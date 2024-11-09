@@ -24,26 +24,22 @@ public class QStore extends EntityPathBase<Store> {
 
     public final umc.spring.domain.shared.QBaseTimeEntity _super = new umc.spring.domain.shared.QBaseTimeEntity(this);
 
-    public final NumberPath<Float> avgRating = createNumber("avgRating", Float.class);
+    public final StringPath address = createString("address");
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
-    public final umc.spring.domain.map.domain.QMap map;
+    public final NumberPath<Long> id = createNumber("id", Long.class);
+
+    public final ListPath<umc.spring.domain.mission.domain.Mission, umc.spring.domain.mission.domain.QMission> missionList = this.<umc.spring.domain.mission.domain.Mission, umc.spring.domain.mission.domain.QMission>createList("missionList", umc.spring.domain.mission.domain.Mission.class, umc.spring.domain.mission.domain.QMission.class, PathInits.DIRECT2);
+
+    public final StringPath name = createString("name");
+
+    public final umc.spring.domain.QRegion region;
 
     public final ListPath<umc.spring.domain.review.domain.Review, umc.spring.domain.review.domain.QReview> reviewList = this.<umc.spring.domain.review.domain.Review, umc.spring.domain.review.domain.QReview>createList("reviewList", umc.spring.domain.review.domain.Review.class, umc.spring.domain.review.domain.QReview.class, PathInits.DIRECT2);
 
-    public final StringPath storeBackgroundImageUrl = createString("storeBackgroundImageUrl");
-
-    public final StringPath storeCategory = createString("storeCategory");
-
-    public final NumberPath<Long> storeId = createNumber("storeId", Long.class);
-
-    public final StringPath storeLocation = createString("storeLocation");
-
-    public final StringPath storeName = createString("storeName");
-
-    public final EnumPath<umc.spring.domain.shared.StoreStatus> storeStatus = createEnum("storeStatus", umc.spring.domain.shared.StoreStatus.class);
+    public final NumberPath<Float> score = createNumber("score", Float.class);
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
@@ -66,7 +62,7 @@ public class QStore extends EntityPathBase<Store> {
 
     public QStore(Class<? extends Store> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.map = inits.isInitialized("map") ? new umc.spring.domain.map.domain.QMap(forProperty("map"), inits.get("map")) : null;
+        this.region = inits.isInitialized("region") ? new umc.spring.domain.QRegion(forProperty("region")) : null;
     }
 
 }

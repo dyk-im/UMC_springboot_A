@@ -3,8 +3,6 @@ package umc.spring.domain.store.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.cache.spi.Region;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,8 +24,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.spring.domain.mission.domain.Mission;
 import umc.spring.domain.review.domain.Review;
-import umc.spring.domain.map.domain.Map;
 import umc.spring.domain.shared.BaseTimeEntity;
+import umc.spring.domain.Region;
 import umc.spring.domain.shared.StoreStatus;
 
 @Entity
