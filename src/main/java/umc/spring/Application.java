@@ -17,7 +17,7 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	/*@Bean
+	@Bean
 	public CommandLineRunner run(ApplicationContext context) {
 		return args -> {
 			StoreQueryService storeService = context.getBean(StoreQueryService.class);
@@ -34,5 +34,5 @@ public class Application {
 			storeService.findStoresByNameAndScore(storeName, avgRating)
 				.forEach(System.out::println);
 		};
-	}*/
+	}
 }
