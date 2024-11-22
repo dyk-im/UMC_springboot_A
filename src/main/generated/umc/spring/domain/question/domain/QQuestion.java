@@ -33,7 +33,7 @@ public class QQuestion extends EntityPathBase<Question> {
 
     public final NumberPath<Long> questionId = createNumber("questionId", Long.class);
 
-    public final ListPath<umc.spring.domain.questionMedia.domain.QuestionMedia, umc.spring.domain.questionMedia.domain.QQuestionMedia> questionMediaList = this.<umc.spring.domain.questionMedia.domain.QuestionMedia, umc.spring.domain.questionMedia.domain.QQuestionMedia>createList("questionMediaList", umc.spring.domain.questionMedia.domain.QuestionMedia.class, umc.spring.domain.questionMedia.domain.QQuestionMedia.class, PathInits.DIRECT2);
+    public final ListPath<umc.spring.domain.question.questionMedia.domain.QuestionMedia, umc.spring.domain.question.questionMedia.domain.QQuestionMedia> questionMediaList = this.<umc.spring.domain.question.questionMedia.domain.QuestionMedia, umc.spring.domain.question.questionMedia.domain.QQuestionMedia>createList("questionMediaList", umc.spring.domain.question.questionMedia.domain.QuestionMedia.class, umc.spring.domain.question.questionMedia.domain.QQuestionMedia.class, PathInits.DIRECT2);
 
     public final EnumPath<umc.spring.domain.shared.QuestionStatus> questionStatus = createEnum("questionStatus", umc.spring.domain.shared.QuestionStatus.class);
 

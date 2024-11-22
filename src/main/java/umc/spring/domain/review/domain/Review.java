@@ -20,7 +20,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.spring.domain.reply.domain.Reply;
-import umc.spring.domain.reviewMedia.domain.ReviewMedia;
+import umc.spring.domain.review.reviewMedia.domain.ReviewMedia;
 import umc.spring.domain.shared.BaseTimeEntity;
 import umc.spring.domain.store.domain.Store;
 import umc.spring.domain.user.domain.User;

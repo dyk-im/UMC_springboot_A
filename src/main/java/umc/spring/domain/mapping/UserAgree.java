@@ -13,7 +13,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.spring.domain.shared.BaseTimeEntity;
-import umc.spring.domain.term.domain.Term;
+import umc.spring.domain.etc.term.domain.Term;
 import umc.spring.domain.user.domain.User;
 
 @Entity

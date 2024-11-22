@@ -19,7 +19,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import umc.spring.domain.map.domain.Map;
+import umc.spring.domain.etc.map.domain.Map;
 import umc.spring.domain.review.domain.Review;
 import umc.spring.domain.shared.BaseTimeEntity;
 import umc.spring.domain.shared.StoreStatus;

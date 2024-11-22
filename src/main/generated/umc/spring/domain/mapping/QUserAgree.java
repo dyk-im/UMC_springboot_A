@@ -27,7 +27,7 @@ public class QUserAgree extends EntityPathBase<UserAgree> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
-    public final umc.spring.domain.term.domain.QTerm term;
+    public final umc.spring.domain.etc.term.domain.QTerm term;
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
@@ -54,7 +54,7 @@ public class QUserAgree extends EntityPathBase<UserAgree> {
 
     public QUserAgree(Class<? extends UserAgree> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.term = inits.isInitialized("term") ? new umc.spring.domain.term.domain.QTerm(forProperty("term")) : null;
+        this.term = inits.isInitialized("term") ? new umc.spring.domain.etc.term.domain.QTerm(forProperty("term")) : null;
         this.user = inits.isInitialized("user") ? new umc.spring.domain.user.domain.QUser(forProperty("user"), inits.get("user")) : null;
     }
 

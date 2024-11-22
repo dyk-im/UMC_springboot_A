@@ -22,7 +22,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.spring.domain.answer.domain.Answer;
-import umc.spring.domain.questionMedia.domain.QuestionMedia;
+import umc.spring.domain.question.questionMedia.domain.QuestionMedia;
 import umc.spring.domain.shared.BaseTimeEntity;
 import umc.spring.domain.shared.QuestionStatus;
 import umc.spring.domain.shared.QuestionType;

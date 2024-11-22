@@ -35,7 +35,7 @@ public class QReview extends EntityPathBase<Review> {
 
     public final NumberPath<Long> reviewId = createNumber("reviewId", Long.class);
 
-    public final ListPath<umc.spring.domain.reviewMedia.domain.ReviewMedia, umc.spring.domain.reviewMedia.domain.QReviewMedia> reviewMediaList = this.<umc.spring.domain.reviewMedia.domain.ReviewMedia, umc.spring.domain.reviewMedia.domain.QReviewMedia>createList("reviewMediaList", umc.spring.domain.reviewMedia.domain.ReviewMedia.class, umc.spring.domain.reviewMedia.domain.QReviewMedia.class, PathInits.DIRECT2);
+    public final ListPath<umc.spring.domain.review.reviewMedia.domain.ReviewMedia, umc.spring.domain.review.reviewMedia.domain.QReviewMedia> reviewMediaList = this.<umc.spring.domain.review.reviewMedia.domain.ReviewMedia, umc.spring.domain.review.reviewMedia.domain.QReviewMedia>createList("reviewMediaList", umc.spring.domain.review.reviewMedia.domain.ReviewMedia.class, umc.spring.domain.review.reviewMedia.domain.QReviewMedia.class, PathInits.DIRECT2);
 
     public final umc.spring.domain.store.domain.QStore store;
 

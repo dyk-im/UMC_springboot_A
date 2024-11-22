@@ -29,7 +29,7 @@ public class QStore extends EntityPathBase<Store> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
-    public final umc.spring.domain.map.domain.QMap map;
+    public final umc.spring.domain.etc.map.domain.QMap map;
 
     public final ListPath<umc.spring.domain.review.domain.Review, umc.spring.domain.review.domain.QReview> reviewList = this.<umc.spring.domain.review.domain.Review, umc.spring.domain.review.domain.QReview>createList("reviewList", umc.spring.domain.review.domain.Review.class, umc.spring.domain.review.domain.QReview.class, PathInits.DIRECT2);
 
@@ -66,7 +66,7 @@ public class QStore extends EntityPathBase<Store> {
 
     public QStore(Class<? extends Store> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.map = inits.isInitialized("map") ? new umc.spring.domain.map.domain.QMap(forProperty("map"), inits.get("map")) : null;
+        this.map = inits.isInitialized("map") ? new umc.spring.domain.etc.map.domain.QMap(forProperty("map"), inits.get("map")) : null;
     }
 
 }

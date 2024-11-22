@@ -40,4 +40,15 @@ public class UserPrefer extends BaseTimeEntity {
 		this.user = user;
 		this.foodCategory = foodCategory;
 	}
+
+	public static UserPrefer createUserPrefer(User user, FoodCategory foodCategory){
+		return UserPrefer.builder().user(user).foodCategory(foodCategory).build();
+	}
+
+	public void updatePreferUser(User user){
+		if(this.user != null)
+			user.getUserPreferList().remove(this);
+		this.user = user;
+		user.getUserPreferList().add(this);
+	}
 }
