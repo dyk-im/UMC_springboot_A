@@ -7,7 +7,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum StoreStatus {
 	ACTIVE("ACTIVE"),
-	INACTIVE("INACTIVE");
+	INACTIVE("INACTIVE"),
+	OPEN("OPEN");
 
 	private final String storeStatus;
 

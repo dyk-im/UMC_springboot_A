@@ -150,3 +150,12 @@ public class User extends BaseTimeEntity {
 		this.userPreferList.addAll(preferList);
 	}
 }
+
+//유저 삽입용
+/*INSERT INTO users
+(user_name, gender, year, month, day, address, extra_address, user_status, inactive_date, nickname, phone_number, email, profile_image_url, point, refresh_token)
+VALUES
+    ('John Doe', 'MALE', 1990, 1, 15, '123 Main St', 'Apt 456', 'ACTIVE', NULL, 'Johnny', '123-456-7890', 'john.doe@example.com', 'http://example.com/profile.jpg', 100, 'abcd1234refresh');
+UPDATE users SET created_at = '2023-11-28 12:00:00' WHERE user_name = 'John Doe';
+    */
+

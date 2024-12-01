@@ -1,5 +1,7 @@
 package umc.spring.domain.mapping;
 
+import java.util.Random;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -41,18 +43,47 @@ public class UserMission extends BaseTimeEntity {
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	@Column(columnDefinition = "VARCHAR(10) DEFAULT 'WAITING'")
+	@Column(columnDefinition = "VARCHAR(30) DEFAULT 'WAITING'")
 	private MissionStatus missionStatus;
 
-	@NotNull
 	@Column(length = 20)
 	private String missionNumber;
 
 	@Builder
-	private UserMission(Mission mission, User user, MissionStatus missionStatus, String missionNumber) {
+	private UserMission(Mission mission, User user) {
 		this.mission = mission;
 		this.user = user;
 		this.missionStatus = MissionStatus.WAITING;
-		this.missionNumber = missionNumber;
+	}
+
+	public static UserMission createUserMission(Mission mission, User user) {
+		return UserMission.builder()
+			.mission(mission)
+			.user(user)
+			.build();
+	}
+
+	public void createMissionNumber() {
+		this.missionNumber = getMissionNumber();
+	}
+
+	public static String generateMissionCode() {
+		Random random = new Random();
+		int randomNumber = 10000000 + random.nextInt(90000000); // 8자리 숫자 생성
+		return String.valueOf(randomNumber);
+	}
+
+	public void startMissionStatus() {
+		this.missionStatus = MissionStatus.ONGOING;
+	}
+
+	public void finishMissionStatus() {
+		this.missionStatus = MissionStatus.COMPLETE;
 	}
 }
+/*INSERT INTO user_mission (mission_id, user_id, mission_status, mission_number)
+VALUES
+    (1, 1, 'ONGOING', 11111111),
+    (2, 1, 'ONGOING', 11111111),
+    (3, 1, 'ONGOING', 11111111);*/
+//UPDATE user_mission SET created_at = '2023-11-28 12:00:00' WHERE user_id = 1;

@@ -16,7 +16,7 @@ import umc.spring.domain.user.dto.UserResponseDto;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserRestController {
 
 	private final UserCommandService userCommandService;

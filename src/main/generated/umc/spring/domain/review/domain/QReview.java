@@ -29,7 +29,7 @@ public class QReview extends EntityPathBase<Review> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
-    public final NumberPath<Integer> rating = createNumber("rating", Integer.class);
+    public final NumberPath<Float> rating = createNumber("rating", Float.class);
 
     public final umc.spring.domain.reply.domain.QReply reply;
 

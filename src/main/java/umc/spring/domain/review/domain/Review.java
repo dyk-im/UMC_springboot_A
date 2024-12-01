@@ -46,8 +46,9 @@ public class Review extends BaseTimeEntity {
 
 	@NotNull
 	@Column
-	private int rating;
+	private float rating;
 
+	@NotNull
 	@Column
 	private String comment;
 
@@ -58,10 +59,30 @@ public class Review extends BaseTimeEntity {
 	private Reply reply;
 
 	@Builder
-	private Review(User user, Store store, int rating) {
+	private Review(User user, Store store, float rating, String comment) {
 		this.user = user;
 		this.store = store;
 		this.rating = rating;
+		this.comment = comment;
+	}
+
+	public static Review createReview(User user, Store store, float rating, String comment) {
+		return Review.builder()
+			.user(user)
+			.store(store)
+			.rating(rating)
+			.comment(comment)
+			.build();
 	}
 
 }
+
+/*INSERT INTO review (user_id, store_id, rating, comment)
+VALUES (1, 1, 4.5, 'The food was excellent!'),
+       (1, 1, 4.5, 'The food was god!');*/
+/*UPDATE review
+SET created_at = '2023-11-28 12:00:00'
+WHERE user_id = 1 AND store_id = 1 AND comment = 'The food was excellent!';
+UPDATE review
+SET created_at = '2023-11-28 12:30:00'
+WHERE user_id = 1 AND store_id = 1 AND comment = 'The food was god!';*/
