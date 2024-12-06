@@ -1,4 +1,4 @@
-package umc.spring.temp.controller;
+package umc.spring.global.temp.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 import umc.spring.global.api.ApiResponse;
-import umc.spring.temp.converter.TempConverter;
-import umc.spring.temp.service.TempService.TempQueryService;
-import umc.spring.temp.dto.TempResponse;
+import umc.spring.global.temp.converter.TempConverter;
+import umc.spring.global.temp.service.TempService.TempQueryService;
+import umc.spring.global.temp.dto.TempResponse;
 
 @RestController
 @RequestMapping("/temp")

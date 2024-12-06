@@ -1,4 +1,4 @@
-package umc.spring.temp.dto;
+package umc.spring.global.temp.dto;
 
 public class TempRequest {
 }

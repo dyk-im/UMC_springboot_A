@@ -39,6 +39,11 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	// Swagger
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+	//thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+	// Spring Security OAuth2 클라이언트 의존성 추가
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
 	// queryDSL
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
