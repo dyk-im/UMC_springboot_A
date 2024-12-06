@@ -1,14 +1,15 @@
 package umc.spring.domain.shared;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
-@AllArgsConstructor
-public enum UserType {
-	ADMIN("ADMIN"),
-	OWNER("OWNER"),
-	CUSTOMER("CUSTOMER");
+@RequiredArgsConstructor
+public enum Role {
+	ADMIN("ADMIN", "관리자"),
+	USER("USER", "회원"),
+	GUEST("GUEST", "비회원");
 
-	private final String userType;
+	private final String key;
+	private final String title;
 }

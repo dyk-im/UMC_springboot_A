@@ -19,7 +19,8 @@ public class UserConverter {
 	public static User toUser(UserRequestDTO.JoinDto request){
 
 		User user = User.create(request.getName(), request.getGender(), request.getBirthD(),
-			request.getBirthM(), request.getBirthY(), request.getAddress(), request.getExtraAddress());
+			request.getBirthM(), request.getBirthY(), request.getAddress(), request.getExtraAddress(),
+			request.getRole(), request.getEmail(), request.getPassword());
 
 		user.addPrefer(new ArrayList<>());
 		return user;

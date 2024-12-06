@@ -43,6 +43,8 @@ public class QUser extends EntityPathBase<User> {
 
     public final ListPath<umc.spring.domain.etc.notification.domain.Notification, umc.spring.domain.etc.notification.domain.QNotification> notificationList = this.<umc.spring.domain.etc.notification.domain.Notification, umc.spring.domain.etc.notification.domain.QNotification>createList("notificationList", umc.spring.domain.etc.notification.domain.Notification.class, umc.spring.domain.etc.notification.domain.QNotification.class, PathInits.DIRECT2);
 
+    public final StringPath password = createString("password");
+
     public final StringPath phoneNumber = createString("phoneNumber");
 
     public final NumberPath<Integer> point = createNumber("point", Integer.class);
@@ -56,6 +58,10 @@ public class QUser extends EntityPathBase<User> {
     public final ListPath<umc.spring.domain.reply.domain.Reply, umc.spring.domain.reply.domain.QReply> replyList = this.<umc.spring.domain.reply.domain.Reply, umc.spring.domain.reply.domain.QReply>createList("replyList", umc.spring.domain.reply.domain.Reply.class, umc.spring.domain.reply.domain.QReply.class, PathInits.DIRECT2);
 
     public final ListPath<umc.spring.domain.review.domain.Review, umc.spring.domain.review.domain.QReview> reviewList = this.<umc.spring.domain.review.domain.Review, umc.spring.domain.review.domain.QReview>createList("reviewList", umc.spring.domain.review.domain.Review.class, umc.spring.domain.review.domain.QReview.class, PathInits.DIRECT2);
+
+    public final EnumPath<umc.spring.domain.shared.Role> role = createEnum("role", umc.spring.domain.shared.Role.class);
+
+    public final EnumPath<umc.spring.domain.shared.SocialStatus> socialStatus = createEnum("socialStatus", umc.spring.domain.shared.SocialStatus.class);
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;

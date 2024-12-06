@@ -33,6 +33,8 @@ import umc.spring.domain.reply.domain.Reply;
 import umc.spring.domain.review.domain.Review;
 import umc.spring.domain.shared.BaseTimeEntity;
 import umc.spring.domain.shared.Gender;
+import umc.spring.domain.shared.Role;
+import umc.spring.domain.shared.SocialStatus;
 import umc.spring.domain.shared.UserStatus;
 
 @Entity(name = "users")
@@ -47,13 +49,17 @@ public class User extends BaseTimeEntity {
 	private Long userId;
 
 	@NotNull
-	@Column(length = 10)
+	@Column
 	private String userName;
 
-	/*@NotNull
+	@NotNull
+	@Column
+	private String password;
+
+	@NotNull
 	@Column(columnDefinition = "VARCHAR(20)")
 	@Enumerated(EnumType.STRING)
-	private UserType userType;*/
+	private Role role;
 
 	@Column(length = 20)
 	private String nickname;
@@ -84,7 +90,8 @@ public class User extends BaseTimeEntity {
 	@Column(length = 20)
 	private String phoneNumber;
 
-	@Column(length = 50)
+	@NotNull
+	@Column(length = 50, unique = true)
 	private String email;
 
 	@Column
@@ -93,10 +100,9 @@ public class User extends BaseTimeEntity {
 	@Column
 	private int point;
 
-	/*@NotNull
 	@Column(columnDefinition = "VARCHAR(10)")
 	@Enumerated(EnumType.STRING)
-	private SocialStatus socialStatus;*/
+	private SocialStatus socialStatus;
 
 	private String refreshToken;
 
@@ -122,25 +128,35 @@ public class User extends BaseTimeEntity {
 	private List<Reply> replyList = new ArrayList<>();
 
 	@Builder
-	private User(String userName, Gender gender, BirthDay birth, String address,
-		String extraAddress) {
+	private User(String userName, String email, String password, Gender gender, BirthDay birth, String address,
+		String extraAddress, Role role) {
 		this.userName = userName;
 		this.gender = gender;
 		this.birth = birth;
 		this.address = address;
 		this.extraAddress = extraAddress;
 		this.userStatus = UserStatus.ACTIVE;
+		this.role = role;
+		this.email = email;
+		this.password = password;
 	}
 
 	public static User create(String userName, Gender gender, int birthD, int birthM, int birthY,
-		String address, String extraAddress) {
+		String address, String extraAddress, Role role, String email, String password) {
 		return User.builder()
 			.userName(userName)
 			.gender(gender)
 			.birth(BirthDay.builder().day(birthD).year(birthM).month(birthY).build())
 			.address(address)
 			.extraAddress(extraAddress)
+			.role(role)
+			.email(email)
+			.password(password)
 			.build();
+	}
+
+	public void encodePassword(String password){
+		this.password = password;
 	}
 
 	public void addPrefer(List<UserPrefer> preferList) {
